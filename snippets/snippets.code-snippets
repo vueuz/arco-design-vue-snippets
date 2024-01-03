@@ -1,0 +1,811 @@
+{
+  // ===
+  // MARK: === Common ===
+  // ===
+
+  // MARK: Button
+  "Arco Design Vue - Button": {
+    "prefix":"arb",
+    "description": "Arco Design Vue default button",
+    "body":[
+      "<a-button type=\"${1|primary,secondary,text,outline,dashed|}\" @click=\"$2\">$3</a-button>"
+    ]
+  },
+
+  // MARK: Link
+  "Arco Design Vue - Link": {
+    "prefix": "arl",
+    "body": [
+      "<a-link $1>$2</a-link>"
+    ]
+  },
+
+  // MARK: Typography
+  "Arco Design Vue - Typography": {
+    "prefix": "artyp",
+    "body": [
+      "<a-typography ${1|bold,mark,underline,delete,code,disabled,editable,default-editing,copyable,ellipsis|}>$2</a-typography>"
+    ]
+  },
+
+  // ===
+  // MARK: === Layout ===
+  // ===
+
+  // MARK: Layout
+  "Arco Design Vue - Layout": {
+    "prefix": "arlayout",
+    "body": [
+      "<a-layout $1>"
+      "\t$2"
+      "</a-layout>"
+    ]
+  },
+
+  // MARK: Header
+  "Arco Design Vue - Header": {
+    "prefix": "arheader",
+    "body": [
+      "<a-layout-header $1>"
+      "\t$2"
+      "</a-layout-header>"
+    ]
+  },
+
+  // MARK: Footer
+  "Arco Design Vue - Footer": {
+    "prefix": "arfooter",
+    "body": [
+      "<a-layout-footer $1>"
+      "\t$2"
+      "</a-layout-footer>"
+    ]
+  },
+
+  // MARK: Sider
+  "Arco Design Vue - Sider": {
+    "prefix": "arsider",
+    "body": [
+      "<a-layout-sider $1>"
+      "\t$2"
+      "</a-layout-sider>"
+    ]
+  },
+
+  // MARK: Content
+  "Arco Design Vue - Content": {
+    "prefix": "arcontent",
+    "body": [
+      "<a-layout-content $1>"
+      "\t$2"
+      "</a-layout-content>"
+    ]
+  },
+
+  // MARK: Row
+  "Arco Design Vue - Row": {
+    "prefix": "arrow",
+    "body": [
+      "<a-row :gutter=\"$1\">"
+			"\t<a-col :span=\"$2\">$3</a-col>"
+			"$4"
+			"</a-row>"
+    ],
+    "description": "Arco Design Vue Row Component"
+  },
+
+  // MARK: Col
+  "Arco Design Vue - Col": {
+    "prefix": "arcol",
+    "body": [
+      "<a-col :span=\"$1\">"
+      "  $2"
+      "</a-col>"
+    ],
+    "description": "Arco Design Vue Col Component"
+  },
+
+  // MARK: Space
+  "Arco Design Vue - Space": {
+    "prefix": "ars",
+    "body": [
+      "<a-space $1>"
+      "\t$2"
+      "</a-space>"
+    ]
+  },
+
+  // MARK: Divider
+  "Arco Design Vue - Divider": {
+    "prefix": "ardiv",
+    "body": [
+      "<a-divider ${1|direction=\"vertical\",orientation=\"left\",type=\"solid\"|} />
+    ]
+  },
+
+  // ===
+  // MARK: === Data Display
+  // ===
+
+  // MARK: Avatar
+  "Arco Design Vue - Avatar": {
+    "prefix": "arav",
+    "body": [
+      "<a-avatar $1>$2</a-avatar>"
+    ]
+  },
+
+  // MARK: Badge
+  "Arco Design Vue - Badge": {
+    "prefix": "arbad",
+    "body": [
+      "<a-badge :count=\"$1\">$2</a-badge>"
+    ]
+  },
+
+  // MARK: Calendar
+  "Arco Design Vue - Calendar": {
+    "prefix": "arcal",
+    "body": [
+      "<a-calendar :value=\"$1\" $2/>"
+    ]
+  },
+
+  // MARK: Card
+  "Arco Design Vue - Card": {
+    "prefix": "arcard",
+    "body": [
+      "<a-card title=\"$1\" $2>"
+      "  $3"
+      "</a-card>"
+    ],
+    "description": "Arco Design Vue Card Component"
+  },
+
+  // MARK: Carousel
+  "Arco Design Vue - Carousel": {
+    "prefix": "arcar",
+    "body": [
+      "<a-carousel",
+      " :style=\"{ width: '300px', height: '200px' }\"",
+      " :autoplay=\"$1\"
+      " :dots=\"${2|false,true|}\"",
+      ">",
+      "  <a-carousel-item v-for=\"${3} in ${4}\" :key=\"$3.${5}\">"
+      "    <img"
+      "      :src=\"$3.${6}\""
+      "      :style=\"{ width: '100%' }\""
+      "    />"
+      "  </a-carousel-item>"
+      "</a-carousel>"
+    ],
+    "description": "Arco Design Vue Carousel Component"
+  },
+
+  // MARK: Collapse
+  "Arco Design Vue - Collapse": {
+    "prefix": ["arcollapse", "arcoll"],
+    "body": [
+      "<a-collapse :default-active-key=\"${1}\" >"
+      "  <a-collapse-item v-for=\"${3} in ${4}\" :key=\"${3}\" header=\"${3}. ${5}\" key=\"1\">"
+      "    $6"
+      "  </a-collapse-item>"
+      "</a-collapse>"
+    ],
+    "description": "Arco Design Vue Collapse Component"
+  },
+
+  // "Arco Design Vue - Collapse ": {
+  //   "prefix": ["arcollapse", "arcoll"],
+  //   "body": [
+  //     "<a-collapse :default-active-key=\"${1}\" ${2|accordion,destroy-on-hide,:bordered=\"false\"|}>"
+  //     "  <a-collapse-item v-for=\"${3} in ${4}\" :key=\"${3}.${5}\" :header=\"${3}.${6}\">"
+  //     "    $7"
+  //     "  </a-collapse-item>"
+  //     "</a-collapse>"
+  //   ],
+  //   "description": "Arco Design Vue Collapse Component"
+  // },
+
+  "Arco Design Vue - Collapse Item": {
+    "prefix": ["arcollapseitem", "arcolli"],
+    "body": [
+      "<a-collapse-item :key=\"$1\" :header=\"$2\">$3</a-collapse-item>"
+    ],
+    "description": "Arco Design Vue Collapse Item Component"
+  },
+
+  // MARK: Comment
+  "Arco Design Vue - Comment": {
+    "prefix": "arcom",
+    "body": [
+      "<a-comment author=\"$1\" datetime=\"$2\" content=\"$3\" />"
+    ],
+    "description": "Arco Design Vue Comment Component"
+  },
+
+  "Arco Design Vue - Comments": {
+    "prefix": "arcoms",
+    "body": [
+      "<a-comment v-for=\"(${1}, index) in ${2}\" :key=\"index\" :author=\"$1.$3\" :datetime=\"$1.$4\" :content=\"$1.$5\" />"
+    ],
+    "description": "Arco Design Vue Comment Component"
+  },
+
+  // MARK: Descriptions
+  "Arco Design Vue - Descriptions": {
+    "prefix": "ardes",
+    "body": [
+      "<a-descriptions :column=\"$1\" :data=\"$2\" $3>$4</a-descriptions>"
+    ],
+    "description": "Arco Design Vue Descriptions Component"
+  },
+
+  "Arco Design Vue - Descriptions Items": {
+    "prefix": "ardesi",
+    "body": [
+      "<a-descriptions-item v-for=\"${1} in ${2}\" :key=\"${3}\" :label=\"$1\">"
+      "  $4"
+      "</a-descriptions-item>"
+    ],
+    "description": "Arco Design Vue Descriptions Items Component"
+  },
+
+  // MARK: Empty
+  "Arco Design Vue - Empty": {
+    "prefix": "arem",
+    "body": [
+      "<a-empty />"
+    ],
+    "description": "Arco Design Vue Empty Component"
+  },
+
+  // MARK: Image
+  "Arco Design Vue - Image": {
+    "prefix": "arimg",
+    "body": [
+      "<a-image :src=\"$1\" $2 />"
+    ],
+    "description": "Arco Design Vue Image Component"
+  },
+
+  // MARK: List
+  "Arco Design Vue - List": {
+    "prefix": "arlist",
+    "body": [
+      "<a-list size=\"${1|small,medium,large|}\">"
+      "  <a-list-item v-for=\"${2} in ${3}\" :key=\"${2}\">$4</a-list-item>"
+      "</a-list>"
+    ]
+  },
+
+  // MARK: Popover
+  "Arco Design Vue - Popover": {
+    "prefix": "arpopover",
+    "body": [
+      "<a-popover :title=\"$1\" position=\"${2|top,top-left,top-right,bottom,bottom-left,bottom-right,left,left-top,left-bottom,right,right-top,right-bottom|}\" trigger=\"${3|hover,click,focus,contextMenu|}\">",
+      "  <template #content>$4</template>",
+      "</a-popover>"
+    ],
+    "description": "Arco Design Vue Popover Component"
+  },
+
+  // MARK: Statistic
+  "Arco Design Vue - Statistic": {
+    "prefix": "arstat",
+    "body": [
+      "<a-statistic title=\"$1\" :value=\"$2\" ${3|show-group-separator,precision=\"2\",animation|} />"
+    ],
+    "description": "Arco Design Vue Statistic Component"
+  },
+
+  // MARK: Table
+  "Arco Design Vue - Table": {
+    "prefix": "art",
+    "body": [
+      "<a-table :columns=\"$1\" :data=\"$2\" ${3|table-layout-fixed,span-all,filter-icon-align-left,column-resizable,sticky-header,default-expand-all-rows|} />",
+    ],
+    "description": "Arco Design Vue Table Component"
+  },
+
+  // MARK: Tabs
+  "Arco Design Vue - Tabs": {
+    "prefix": "artab",
+    "body": [
+      "<a-tabs v-model=\"$1\" type=\"${2|line,card,card-gutter,text,rounded,capsule|}\" ${3|hide-content,auto-switch,animation,justify,lazy-load,destroy-on-hide,show-add-button,editable|}>",
+      "  <a-tab-pane v-for=\"${4} in ${5}\" :key=\"${4}\" :title=\"$4\">$6</a-tab-pane>",
+      "</a-tabs>"
+    ],
+    "description": "Arco Design Vue Tabs Component"
+  },
+
+  // MARK: Tag
+  "Arco Design Vue - Tag": {
+    "prefix": "artag",
+    "body": [
+      "<a-tag color=\"${1|red,orange,yellow,green,blue,purple,pink,magenta,cyan,orangered|}\" ${2|closeable,checkable|}>$3</a-tag>"
+    ],
+    "description": "Arco Design Vue Tag Component"
+  },
+
+    "Arco Design Vue - Tags": {
+    "prefix": "artags",
+    "body": [
+      "<a-tag v-for=\"${1} in ${2}\" :key=\"${1}.$3\" >{{ ${1}.$4}}</a-tag>"
+    ],
+    "description": "Arco Design Vue Tag Component"
+  },
+
+  // MARK: Timeline
+  "Arco Design Vue - Timeline": {
+    "prefix": "artl",
+    "body": [
+      "<a-timeline ${1|reverse,direction=\"horizontal\",pending,label-position=\"relative\"|}>",
+      "  <a-timeline-item",
+      "    v-for=\"${2} in ${3}\"",
+      "    :key=\"${2}.${4:key}\"",
+      "    :label=\"${2}.${6:label}\"",
+      ">",
+      "    {{ ${2}.$7 }}",
+      "  </a-timeline-item>",
+      "</a-timeline>"
+    ]
+  },
+
+  "Arco Design Vue - Timeline Item": {
+    "prefix": "artli",
+    "body": [
+      "<a-timeline-item dot-color=\"$1\" label=\"$2\" >$3</a-timeline-item>"
+    ],
+    "description": "Arco Design Vue Timeline Item Component"
+  },
+
+  "Arco Design Vue - Timeline Items": {
+    "prefix": "artlis",
+    "body": [
+      "<a-timeline-item v-for=\"${1} in ${2}\" :key=\"${1}.${3:key}\" :label=\"${4:label}\" >$5</a-timeline-item>"
+    ],
+    "description": "Arco Design Vue Timeline Item Component"
+  },
+
+  // MARK: Tooltip
+  "Arco Design Vue - Tooltip": {
+    "prefix": "artooltip",
+    "body": [
+      "<a-tooltip content=\"$1\" ${2|default-popup-visible,mini|}>",
+      "  $2",
+      "</a-tooltip>"
+    ],
+    "description": "Arco Design Vue Tooltip Component"
+  },
+
+  // MARK: Tree
+  "Arco Design Vue - Tree": {
+    "prefix": "artree",
+    "body": [
+
+      "<a-tree"
+      "  :data=\"$1\"
+      "  :default-expanded-keys=\"$2\"
+      "  :default-selected-keys=\"$3\""
+      "  ${4|block-node,multiple,show-line,draggable|}"
+      "/>"
+    ],
+    "description": "Arco Design Vue Tree Component"
+  },
+
+  // ===
+  // MARK: === Data Entry ===
+  // ===
+
+  // MARK: AutoComplete
+  "Arco Design Vue - AutoComplete": {
+    "prefix": "arac",
+    "body": [
+      "<a-auto-complete v-model=\"$1\" :data=\"$2\" @search=\"$3\" ${4|allow-input,strict allow-clear,disabled, :default-value=\"${5}\"|} />"
+    ],
+    "description": "Arco Design Vue AutoComplete Component"
+  },
+
+  // MARK: Cascader
+  "Arco Design Vue - Cascader": {
+    "prefix": "arcas",
+    "body": [
+      "<a-cascader :options=\"$1\" v-model=\"$2\" />"
+    ]
+  },
+
+  // MARK: Checkbox
+  "Arco Design Vue - Checkbox": {
+    "prefix": "arc",
+    "body": [
+      "<a-checkbox v-model=\"$1\">$2</a-checkbox>"
+    ],
+    "description": "Arco Design Vue Checkbox Component"
+  },
+
+  "Arco Design Vue - Checkboxes group": {
+    "prefix": ["arcs", "arcg"],
+    "body": [
+      "<a-checkbox-group v-model=\"$1\">",
+      "  <a-checkbox v-for=\"${2} in ${3}\" :key=\"${2}\" :value=\"${2}\">$4</a-checkbox>",
+      "</a-checkbox-group>"
+    ],
+    "description": "Arco Design Vue Checkbox Component"
+  },
+
+  // MARK: DatePicker
+  "Arco Design Vue - DatePicker": {
+    "prefix": "ardp",
+    "body": [
+      "<a-date-picker v-model=\"$1\" $2 />"
+    ],
+    "description": "Arco Design Vue DatePicker Component"
+  },
+
+  "Arco Design Vue - DateRangePicker": {
+    "prefix": "ardrp",
+    "body": [
+      "<a-range-picker v-model=\"$1\" mode=\"${2|week,month,year,quarter,date|}\" ${3|showTime,disabled-input,value-format=\"${4|timestamp,Date|}\"|} />"
+    ],
+    "description": "Arco Design Vue DateRangePicker Component"
+  },
+
+  // MARK: Form
+  "Arco Design Vue - Form": {
+    "prefix": "arf",
+    "body": [
+      "<a-form",
+      "  :model=\"$1\"",
+      "  @submit=\"$2\"",
+      ">",
+      "  <a-form-item field=\"$3\" label=\"$4\">",
+      "    <a-input v-model=\"$1.$3\" />",
+      "  </a-form-item>",
+      "</a-form>",
+    ],
+    "description": "Arco Design Vue Form Component"
+  },
+
+  "Arco Design Vue - Form Item": {
+    "prefix": "arfi",
+    "body": [
+      "<a-form-item field=\"$1\" label=\"$2\" >"
+      "  $3"
+      "</a-form-item>"
+    ]
+  },
+
+  // MARK: Input
+	"Arco Design Vue - Input": {
+    "prefix": ["ari", "arinput"],
+    "body": [
+      "<a-input v-model=\"$1\" placeholder=\"${2}\" ${3:allow-clear} />"
+    ],
+    "description": "Arco Design Vue Input Component"
+  },
+
+	"Arco Design Vue - Input Password": {
+    "prefix": ["arip", "arinputp"],
+    "body": [
+      "<a-input-password v-model=\"$1\" placeholder=\"${2}\" ${3:allow-clear} />"
+    ],
+    "description": "Arco Design Vue Input Password Component"
+  },
+
+  // MARK: InputNumber
+  "Arco Design Vue - InputNumber": {
+    "prefix": "arin",
+    "body": [
+      "<a-input-number v-model=\"$1\" />"
+    ],
+    "description": "Arco Design Vue InputNumber Component"
+  },
+
+  // MARK: Verification
+  "Arco Design Vue - Verification": {
+    "prefix": "arver",
+    "body": [
+      "<a-verification-code v-model=\"$1\" @finish=\"$2\" />"
+    ],
+    "description": "Arco Design Vue Verification Component"
+  },
+
+  // MARK: Input Tag
+  "Arco Design Vue - Input Tag": {
+    "prefix": ["aritag", "arit"],
+    "body": [
+      "<a-input-tag v-model=\"$1\" placeholder=\"${2}\" ${3:allow-clear} />"
+    ],
+    "description": "Arco Design Vue Input Tag Component"
+  },
+
+  // MARK: Mention
+  "Arco Design Vue - Mention": {
+    "prefix": "armen",
+    "body": [
+      "<a-mention v-model=\"$1\" :data=\"$2\" placeholder=\"${3}\" ${4:allow-clear} />"
+    ],
+    "description": "Arco Design Vue Mention Component"
+  },
+
+
+  // MARK: Radio
+ "Arco Design Vue - Radio": {
+    "prefix": "arr",
+    "body": [
+      "<a-radio v-model=\"$1\" value=\"$2\">$3</a-radio>"
+    ],
+    "description": "Arco Design Vue Radio Component"
+  },
+
+ "Arco Design Vue - Radios": {
+    "prefix": "arrs",
+    "body": [
+      "<a-radio-group v-model=\"$1\">",
+      "  <a-radio v-for=\"${2} in ${3}\" :key=\"${2}\" :value=\"${2}\">$4</a-radio>",
+      "</a-radio-group>"
+    ],
+    "description": "Arco Design Vue Radio Component"
+  },
+
+   "Arco Design Vue - Radio group": {
+    "prefix": "arrg",
+    "body": [
+      "<a-radio-group v-model=\"$1\" :options=\"$2\" />",
+    ],
+    "description": "Arco Design Vue Radio Component"
+  },
+
+  // MARK: Rate
+  "Arco Design Vue - Rate": {
+    "prefix": "arrt",
+    "body": [
+      "<a-rate v-model=\"$1\" ${2:allow-clear} ${3:allow-half} />"
+    ],
+    "description": "Arco Design Vue Rate Component"
+  },
+
+
+  // MARK: Select
+  "Arco Design Vue - Select": {
+    "prefix": ["arsel", "arselect"],
+    "body": [
+      "<a-select v-model=\"$1\" :options=\"$2\" />"
+    ],
+    "description": "Arco Design Vue Select Component"
+  },
+
+  "Arco Design Vue - Select Option": {
+    "prefix": ["arselo", "arselecto", "aro"],
+    "body": [
+      "<a-option>$1</a-option>"
+    ],
+    "description": "Arco Design Vue Select Option Component"
+  },
+
+  "Arco Design Vue - Select Options": {
+    "prefix": ["arselos", "arselectos", "aros"],
+    "body": [
+      "<a-option v-for=\"$1 in $2\" :key=\"$1\" :value=\"$1\">{{ $1 }}</a-option>"
+    ],
+    "description": "Arco Design Vue Select Options Component"
+  },
+
+
+
+  // MARK: Slider
+  "Arco Design Vue - Slider": {
+    "prefix": "arsl",
+    "body": [
+      "<a-slider v-model=\"$1\" ${2|disabled,show-ticks,show-input,range|} />"
+    ],
+    "description": "Arco Design Vue Slider Component"
+  },
+
+  // MARK: Switch
+  "Arco Design Vue - Switch": {
+    "prefix": "ars",
+    "body": [
+      "<a-switch v-model=\"$1\" />"
+    ],
+    "description": "Arco Design Vue Switch Component"
+  },
+
+  // MARK: Textarea
+  "Arco Design Vue - Textarea": {
+    "prefix": "artext",
+    "body": [
+      "<a-textarea v-model=\"$1\" ${2|auto-size,allow-clear,show-word-limit|} />"
+    ],
+  },
+
+  // MARK: TimePicker
+  "Arco Design Vue - TimePicker": {
+    "prefix": "artp",
+    "body": [
+      "<a-time-picker v-model=\"$1\" type=\"${2|time,time-range|}\" />"
+    ],
+    "description": "Arco Design Vue TimePicker Component"
+  },
+
+  // MARK: Transfer
+  "Arco Design Vue - Transfer": {
+    "prefix": "artrans",
+    "body": [
+      "<a-transfer :data=\"$1\" v-model=\"$2\" ${3|simple,one-way,show-search|} />"
+    ]
+  },
+
+  /* TODO: Tree Select */
+
+  // MARK: Upload
+  "Arco Design Vue - Upload": {
+    "prefix": "arup",
+    "body": [
+      "<a-upload :action=\"$1\" ${2|with-credentials,draggable,directory,multiple|} />"
+    ],
+    "description": "Arco Design Vue Upload Component"
+  },
+
+
+
+
+
+
+
+
+  // ===
+  // MARK: === Feedback ===
+  // ===
+
+  // MARK: Alert
+  "Arco Design Vue - Alert": {
+    "prefix": "aral",
+    "body": [
+      "<a-alert type=\"$1\" ${2|title=\"${3}\",closable,center,banner|}>"
+      "  $4"
+      "</a-alert>"
+    ],
+    "description": "Arco Design Vue Alert Component"
+  },
+
+  // MARK: Drawer
+  "Arco Design Vue - Drawer": {
+    "prefix": "ardrawer",
+    "body": [
+      "<a-drawer title=\"$1\"",
+      "  :visible=\"$2\"",
+      "  placement=\"${3|top,right,left,bottom|}\"",
+      "  :width=\"$4\"",
+      "  ${5|centered,vertical,ok-loading,unmount-on-close,hide-cancel|}",
+      "  @ok=\"$6\"",
+      "  @cancel=\"$7\"",
+      ">",
+      "  $8",
+      "</a-drawer>"
+    ],
+    "description": "Arco Design Vue Drawer Component"
+  },
+
+  /* TODO: Message in JS */
+
+  // MARK: Modal
+  "Arco Design Vue - Modal ": {
+    "prefix": "arm",
+    "body": [
+      "<a-modal title=\"$1\"",
+      "  :visible=\"$2\"",
+      "  :width=\"$4\"",
+      "  ${5|unmount-on-close,hide-cancel,ok-loading,hide-title,draggable|}",
+      "  @ok=\"$6\"",
+      "  @cancel=\"$7\"",
+      ">",
+      "  $8",
+      "</a-modal>"
+    ]
+  },
+
+  /* TODO: Notification in JS */
+
+  // MARK: Popconfirm
+  "Arco Design Vue - Popconfirm": {
+    "prefix": "arpc",
+    "body": [
+      "<a-popconfirm content=\"$1\" position=\"${2|top,tl,tr,bottom,bl,br,left,lt,lb,right,rt,rb|}\" type=\"${3|info,warning,error,success|}\">",
+      "  $4",
+      "</a-popconfirm>"
+    ]
+  },
+
+  // MARK: Progress
+  "Arco Design Vue - Progress": {
+    "prefix": "arpr",
+    "body": [
+      "<a-progress :percent=\"$1\" status=\"${2|normal,success,warning,danger|}\" type=\"${3|line,circle|}\" />"
+    ],
+    "description": "Arco Design Vue Progress Component"
+  },
+
+  // MARK: Result
+  "Arco Design Vue - Result": {
+    "prefix": "arres",
+    "body": [
+      "<a-result :status=\"${1|info,success,warning,error,403,404,500,null|}\" title=\"$2\" subtitle=\"$3\" />"
+    ]
+  },
+
+  // MARK: Spin
+  "Arco Design Vue - Spin": {
+    "prefix": "arspin",
+    "body": [
+      "<a-spin :loading=\"$1\" size=\"${2}\" ${3|dot,hide-icon|} />"
+    ]
+  },
+
+  // MARK: Skeleton
+  "Arco Design Vue - Skeleton": {
+    "prefix": "arske",
+    "body": [
+      "<a-skeleton :loading=\"$1\" :rows=\"$2\" ${3|shape=\"${4|circle,square|}\",size=\"${5|small,medium,large|}\",animation|} />"
+    ],
+    "description": "Arco Design Vue Skeleton Component"
+  },
+
+  // ===
+  // MARK: === Navigation ===
+  // ===
+
+  // MARK: Menu
+ "Arco Design Vue - Menu": {
+    "prefix": "armenu",
+    "body": [
+      "<a-menu mode=\"$1\" theme=\"$2\">",
+      "  <a-menu-item key=\"$3\">$4</a-menu-item>",
+      "</a-menu>"
+    ],
+    "description": "Arco Design Vue Menu Component"
+  },
+
+  // MARK: Dropdown
+  "Arco Design Vue - Dropdown": {
+    "prefix": ["ardd", "ardrop"],
+    "body": [
+      "<a-dropdown @select=\"$1\">",
+      "  <a-button>$2</a-button>",
+      "  <template #content>",
+      "    <a-doption>$3</a-doption>",
+      "  </template>",
+      "</a-dropdown>"
+    ],
+    "description": "Arco Design Vue Dropdown Component"
+  },
+
+  // MARK: Breadcrumb
+  "Arco Design Vue - Breadcrumb": {
+    "prefix": "arbreadcrumb",
+    "body": [
+      "<a-breadcrumb separator=\"$1\">",
+      "  <a-breadcrumb-item to=\"$2\">$3</a-breadcrumb-item>",
+      "</a-breadcrumb>"
+    ],
+    "description": "Arco Design Vue Breadcrumb Component"
+  },
+
+  // MARK: Steps
+  "Arco Design Vue - Steps": {
+    "prefix": "arsteps",
+    "body": [
+      "<a-steps :current=\"$1\">",
+      "  <a-step title=\"$2\"$3 />",
+      "</a-steps>"
+    ],
+    "description": "Arco Design Vue Steps Component"
+  },
+
+  // ===
+  // === TODO:Other
+  // ===
+
+
+}
