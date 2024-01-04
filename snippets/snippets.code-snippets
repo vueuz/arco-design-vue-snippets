@@ -559,7 +559,7 @@
 
   // MARK: Rate
   "Arco Design Vue - Rate": {
-    "prefix": "arrt",
+    "prefix": "arrate",
     "body": [
       "<a-rate v-model=\"$1\" ${2:allow-clear} ${3:allow-half} />"
     ],
@@ -605,7 +605,7 @@
 
   // MARK: Switch
   "Arco Design Vue - Switch": {
-    "prefix": "ars",
+    "prefix": "arsw",
     "body": [
       "<a-switch v-model=\"$1\" />"
     ],
@@ -643,7 +643,7 @@
   "Arco Design Vue - Upload": {
     "prefix": "arup",
     "body": [
-      "<a-upload :action=\"$1\" ${2|with-credentials,draggable,directory,multiple|} />"
+      "<a-upload action=\"$1\" ${2|with-credentials,draggable,directory,multiple|} />"
     ],
     "description": "Arco Design Vue Upload Component"
   },
@@ -663,8 +663,8 @@
   "Arco Design Vue - Alert": {
     "prefix": "aral",
     "body": [
-      "<a-alert type=\"$1\" ${2|title=\"${3}\",closable,center,banner|}>"
-      "  $4"
+      "<a-alert type=\"${1|info,success,warning,error,normal|}\" ${2|closable,center,banner|}>"
+      "  $3"
       "</a-alert>"
     ],
     "description": "Arco Design Vue Alert Component"
@@ -710,10 +710,10 @@
 
   // MARK: Popconfirm
   "Arco Design Vue - Popconfirm": {
-    "prefix": "arpc",
+    "prefix": ["arpc", "arpopc"],
     "body": [
-      "<a-popconfirm content=\"$1\" position=\"${2|top,tl,tr,bottom,bl,br,left,lt,lb,right,rt,rb|}\" type=\"${3|info,warning,error,success|}\">",
-      "  $4",
+      "<a-popconfirm content=\"$1\" position=\"${2|top,tl,tr,bottom,bl,br,left,lt,lb,right,rt,rb|}\" type=\"${3|info,warning,error,success|}\" @ok=\"$4\" >",
+      "  $5",
       "</a-popconfirm>"
     ]
   },
@@ -731,7 +731,7 @@
   "Arco Design Vue - Result": {
     "prefix": "arres",
     "body": [
-      "<a-result :status=\"${1|info,success,warning,error,403,404,500,null|}\" title=\"$2\" subtitle=\"$3\" />"
+      "<a-result status=\"${1|info,success,warning,error,403,404,500,null|}\" title=\"$2\" subtitle=\"$3\" />"
     ]
   },
 
@@ -747,9 +747,29 @@
   "Arco Design Vue - Skeleton": {
     "prefix": "arske",
     "body": [
-      "<a-skeleton :loading=\"$1\" :rows=\"$2\" ${3|shape=\"${4|circle,square|}\",size=\"${5|small,medium,large|}\",animation|} />"
+      "<a-skeleton :loading=\"$1\" ${2:animation}>",
+      "  <a-space direction=\"vertical\" :style=\"{width:'100%'}\" size=\"large\">",
+      "    <a-skeleton-line :rows=\"$3\" />",
+      "  </a-space>",
+      "</a-skeleton>"
     ],
     "description": "Arco Design Vue Skeleton Component"
+  },
+
+  "Arco Design Vue - Skeleton line": {
+    "prefix": "arskel",
+    "body": [
+      "<a-skeleton-line :rows=\"$1\" />",
+    ],
+    "description": "Arco Design Vue Skeleton Line Component"
+  },
+
+  "Arco Design Vue - Skeleton shape": {
+    "prefix": "arskes",
+    "body": [
+      "<a-skeleton-shape shape=\"$1\" />",
+    ],
+    "description": "Arco Design Vue Skeleton Shape Component"
   },
 
   // ===
@@ -760,11 +780,39 @@
  "Arco Design Vue - Menu": {
     "prefix": "armenu",
     "body": [
-      "<a-menu mode=\"$1\" theme=\"$2\">",
+      "<a-menu mode=\"${1|vertical,horizontal,pop,popButton|}\" ${2|auto-open,default-collapsed,accordion,auto-scroll-into-view,show-collapse-button,auto-open-selected|}>",
       "  <a-menu-item key=\"$3\">$4</a-menu-item>",
       "</a-menu>"
     ],
     "description": "Arco Design Vue Menu Component"
+  },
+
+  "Arco Design Vue - Menu item": {
+    "prefix": ["armenuitem", "armenui"],
+    "body": [
+      "<a-menu-item key=\"$1\">$2</a-menu-item>"
+    ],
+    "description": "Arco Design Vue Menu Item Component"
+  },
+
+  "Arco Design Vue -Menu Items": {
+    "prefix": ["armenuis", "armenuitems"],
+    "body": [
+      "<a-menu-item v-for=\"${1} in ${2}\" :key=\"${1}.${3:key}\" >{{ $1.$4 }}</a-menu-item>"
+    ],
+    "description": "Arco Design Vue Menu Item Component"
+  },
+
+  "Arco Design Vue - Submenu": {
+    "prefix": "armenusub",
+    "body": [
+      "<a-sub-menu key=\"$1\">",
+      "  <template #icon>$2</template>",
+      "  <template #title>$3</template>",
+      "  <a-menu-item key=\"$4\">$5</a-menu-item>",
+      "</a-sub-menu>"
+    ],
+    "description": "Arco Design Vue Sub Menu Component"
   },
 
   // MARK: Dropdown
@@ -781,15 +829,65 @@
     "description": "Arco Design Vue Dropdown Component"
   },
 
+  "Arco Design Vue - Dropdown option": {
+    "prefix": ["arddopt", "arddo", "arddi"],
+    "body": [
+      "<a-doption>$1</a-doption>"
+    ],
+    "description": "Arco Design Vue Dropdown Option Component"
+  },
+
+  "Arco Design Vue - Dropdown Options": {
+    "prefix": ["arddopts", "arddos", "arddis"],
+    "body": [
+      "<a-doption v-for=\"${1} in ${2}\" :key=\"${1}.${3:key}\" >{{ $1.$4 }}</a-doption>"
+    ],
+    "description": "Arco Design Vue Dropdown Options Component"
+  },
+
   // MARK: Breadcrumb
   "Arco Design Vue - Breadcrumb": {
-    "prefix": "arbreadcrumb",
+    "prefix": "arbread",
     "body": [
       "<a-breadcrumb separator=\"$1\">",
       "  <a-breadcrumb-item to=\"$2\">$3</a-breadcrumb-item>",
       "</a-breadcrumb>"
     ],
     "description": "Arco Design Vue Breadcrumb Component"
+  },
+
+  "Arco Design Vue - Breadcrumb item": {
+    "prefix": ["arbreaditem", "arbreadi"],
+    "body": [
+      "<a-breadcrumb-item to=\"$1\">$2</a-breadcrumb-item>"
+    ],
+    "description": "Arco Design Vue Breadcrumb Item Component"
+  },
+
+  "Arco Design Vue - Breadcrumb items": {
+    "prefix": ["arbreaditems", "arbreadis"],
+    "body": [
+      "<a-breadcrumb-item v-for=\"${1} in ${2}\" :key=\"${1}.${3:key}\" >{{ $1.$4 }}</a-breadcrumb-item>"
+    ],
+    "description": "Arco Design Vue Breadcrumb Items Component"
+  },
+
+  // MARK: Page Header
+  "Arco Design Vue - Page Header": {
+    "prefix": "arph",
+    "body": [
+      "<a-page-header title=\"$1\" subtitle=\"$2\" >$3</a-page-header>"
+    ],
+    "description": "Arco Design Vue Page Header Component"
+  },
+
+  // MARK:Pagination
+  "Arco Design Vue - Pagination": {
+    "prefix": "arpag",
+    "body": [
+      "<a-pagination :total=\"$1\" ${2|hide-on-single-page,simple,show-total,show-more,show-jumper,show-page-size|} />"
+    ],
+    "description": "Arco Design Vue Pagination Component"
   },
 
   // MARK: Steps
@@ -801,6 +899,22 @@
       "</a-steps>"
     ],
     "description": "Arco Design Vue Steps Component"
+  },
+
+  "Arco Design Vue - Step": {
+    "prefix": "arstepi",
+    "body": [
+      "<a-step title=\"$1\"$2 />"
+    ],
+    "description": "Arco Design Vue Step Component"
+  },
+
+  "Arco Design Vue - Steps items": {
+    "prefix": "arstepis",
+    "body": [
+      "<a-step v-for=\"${1} in ${2}\" :key=\"${1}.${3:key}\" >{{ $1.$4 }}</a-step>"
+    ],
+    "description": "Arco Design Vue Steps Items Component"
   },
 
   // ===
