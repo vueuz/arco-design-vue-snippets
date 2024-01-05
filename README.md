@@ -1,65 +1,129 @@
-# arco-design-vue-snippets README
+# Arco Design Vue代码片段简介
 
-This is the README for your extension "arco-design-vue-snippets". After writing up a brief description, we recommend including the following sections.
+> Arco Design Vue Snippets 是一个适用于Visual Studio Code的代码片段集合，可帮助您更轻松、更快速地编写Arco Design组件。
 
-## Features
+## 安装
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### 手动安装
 
-For example if there is an image subfolder under your extension project workspace:
+前往GitHub并下载代码片段文件夹，然后将文件夹中的文件直接复制到以下路径：
 
-\!\[feature X\]\(images/feature-x.png\)
+Mac：`/Users/<your-user-name>/Library/ApplicationSupport/Code/User/snippets/`
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Windows：`<your-installed-driver>:\Users\<your-user-name>\AppData\Roaming\Code\User\snippets\`
 
-## Requirements
+### 通过VSCode扩展
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+从网站：前往Visual Studio Code市场，搜索“Arco Design Vue Snippets”，然后点击安装按钮。
+从VSCode：点击扩展侧边栏，搜索“Arco Design Vue Snippets”，然后点击安装按钮。
 
-## Extension Settings
+## 特殊说明
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+对于需要子组件作为其内容的组件（例如a-timeline），请使用`arti` 来用v-for循环生成子组件。
 
-For example:
+## 代码片段列表
 
-This extension contributes the following settings:
+Arco Design的所有标签如下，忽略闭合标签和其他更详细的信息。例如`arbtn`生成`<a-button" type="$1" @click="$2">$3</a-button>`。
+代码片段的顺序基本遵循Arco Design官方网站指南中组件的顺序。目前共有88个代码片段。如有必要，会添加更多。目前仅适用于.vue文件。
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Arco Design代码片段可帮助您提高开发效率，并确保您始终使用最新版本的Arco Design库。
 
-## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+|Prefix|Body|
+|---|---|
+|Common|
+|`arb`|`<a-button>`|
+|`arl`|`<a-link>`|
+|`artyp`|`<a-typography>`|
+|Layout|
+|`arlayout`|`<a-layout>`|
+|`arheader`|`<a-layout-header>`|
+|`arfooter`|`<a-layout-footer>`|
+|`arsider`|`<a-layout-sider>`|
+|`arcontent`|`<a-layout-content>`|
+|`arrow`|`<a-row>`|
+|`arcol`|`<a-col>`|
+|`ars`|`<a-space>`|
+|`ardiv`|`<a-divider>`|
+|Data Display|
+|`arav`|`<a-avatar>`|
+|`arbad`|`<a-badge>`|
+|`arcal`|`<a-calendar>`|
+|`arcard`|`<a-card>`|
+|`arcar`|`<a-carousel>`|
+|`arcollapse`, `arcoll`|`<a-collapse>`|
+|`arcollapseitem`, `arcolli`|`<a-collapse-item>`|
+|`arcom`|`<a-comment>`|
+|`arcoms`|`<a-comment>`|
+|`ardes`|`<a-descriptions>`|
+|`ardesi`|`<a-descriptions-item>`|
+|`arem`|`<a-empty>`|
+|`arimg`|`<a-image>`|
+|`arlist`|`<a-list>`|
+|`arpopover`|`<a-popover>`|
+|`arstat`|`<a-statistic>`|
+|`art`|`<a-table>`|
+|`artab`|`<a-tabs>`|
+|`artag`|`<a-tag>`|
+|`artags`|`<a-tag>`|
+|`artl`|`<a-timeline>`|
+|`artli`|`<a-timeline-item>`|
+|`artlis`|`<a-timeline-item>`|
+|`artooltip`|`<a-tooltip>`|
+|`artree`|`<a-tree>`|
+|Data Entry|
+|`arac`|`<a-auto-complete>`|
+|`arcas`|`<a-cascader>`|
+|`arc`|`<a-checkbox>`|
+|`arcs`, `arcg`|`<a-checkbox-group>`|
+|`ardp`|`<a-date-picker>`|
+|`ardrp`|`<a-range-picker>`|
+|`arf`|`<a-form>`|
+|`arfi`|`<a-form-item>`|
+|`ari`, `arinput`|`<a-input>`|
+|`arip`, `arinputp`|`<a-input-password>`|
+|`arin`|`<a-input-number>`|
+|`arver`|`<a-verification-code>`|
+|`aritag`, `arit`|`<a-input-tag>`|
+|`armen`|`<a-mention>`|
+|`arr`|`<a-radio>`|
+|`arrs`|`<a-radio-group>`|
+|`arrg`|`<a-radio-group>`|
+|`arrate`|`<a-rate>`|
+|`arsel`, `arselect`|`<a-select>`|
+|`arselo`, `arselecto`, `aro`|`<a-option>`|
+|`arselos`, `arselectos`, `aros`|`<a-option>`|
+|`arsl`|`<a-slider>`|
+|`arsw`|`<a-switch>`|
+|`artext`|`<a-textarea>`|
+|`artp`|`<a-time-picker>`|
+|`artrans`|`<a-transfer>`|
+|`arup`|`<a-upload>`|
+|Feedback|
+|`aral`|`<a-alert>`|
+|`ardrawer`|`<a-drawer>`|
+|`arm`|`<a-modal>`|
+|`arpc`, `arpopc`|`<a-popconfirm>`|
+|`arpr`|`<a-progress>`|
+|`arres`|`<a-result>`|
+|`arspin`|`<a-spin>`|
+|`arske`|`<a-skeleton>`|
+|`arskel`|`<a-skeleton-line>`|
+|`arskes`|`<a-skeleton-shape>`|
+|Navigation|
+|`armenu`|`<a-menu>`|
+|`armenuitem`, `armenui`|`<a-menu-item>`|
+|`armenuis`, `armenuitems`|`<a-menu-item>`|
+|`armenusub`|`<a-sub-menu>`|
+|`ardd`, `ardrop`|`<a-dropdown>`|
+|`arddopt`, `arddo`, `arddi`|`<a-doption>`|
+|`arddopts`, `arddos`, `arddis`|`<a-doption>`|
+|`arbread`|`<a-breadcrumb>`|
+|`arbreaditem`, `arbreadi`|`<a-breadcrumb-item>`|
+|`arbreaditems`, `arbreadis`|`<a-breadcrumb-item>`|
+|`arph`|`<a-page-header>`|
+|`arpag`|`<a-pagination>`|
+|`arsteps`|`<a-steps>`|
+|`arstepi`|`<a-step>`|
+|`arstepis`|`<a-step>`|
