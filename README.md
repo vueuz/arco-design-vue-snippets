@@ -1,42 +1,42 @@
 # Arco Design Vue代码片段简介
 
-> Arco Design Vue Snippets 是一个适用于Visual Studio Code的代码片段集合，可帮助您更轻松、更快速地编写Arco Design组件。
+> Arco Design Vue Snippets ，可帮助您更轻松、更快速地编写Arco Design组件。
 
-## 安装
+## 项目地址
+<a href="https://github.com/vueuz/arco-design-vue-snippets">
+  Github Repo
+</a>
 
-### 手动安装
+## 使用说明
 
-前往GitHub并下载代码片段文件夹，然后将文件夹中的文件直接复制到以下路径：
-
-Mac：`/Users/<your-user-name>/Library/ApplicationSupport/Code/User/snippets/`
-
-Windows：`<your-installed-driver>:\Users\<your-user-name>\AppData\Roaming\Code\User\snippets\`
-
-### 通过VSCode扩展
-
-从网站：前往Visual Studio Code市场，搜索“Arco Design Vue Snippets”，然后点击安装按钮。
-从VSCode：点击扩展侧边栏，搜索“Arco Design Vue Snippets”，然后点击安装按钮。
+例如输入`arbtn`生成`<a-button" type="$1" @click="$2">$3</a-button>`。
 
 ## 特殊说明
 
-对于需要子组件作为其内容的组件（例如a-timeline），请使用`arti` 来用v-for循环生成子组件。
+对于需要子组件作为其内容的组件（例如a-timeline），请使用`artis`来用v-for循环生成子组件。
+>  ar:(arco 前缀) + tl:(a-timeline) + i:(item) + s:(复数 代表v-for 循环)
+>
+>  生成`<a-timeline-item v-for="....">`
 
 ## 代码片段列表
 
-Arco Design的所有标签如下，忽略闭合标签和其他更详细的信息。例如`arbtn`生成`<a-button" type="$1" @click="$2">$3</a-button>`。
+Arco Design的所有标签如下。
 代码片段的顺序基本遵循Arco Design官方网站指南中组件的顺序。目前共有88个代码片段。如有必要，会添加更多。目前仅适用于.vue文件。
 
 Arco Design代码片段可帮助您提高开发效率，并确保您始终使用最新版本的Arco Design库。
 
 
-
+### Common
 |Prefix|Body|
 |---|---|
-|Common|
 |`arb`|`<a-button>`|
 |`arl`|`<a-link>`|
 |`artyp`|`<a-typography>`|
-|Layout|
+
+
+### Layout
+|Prefix|Body|
+|---|---|
 |`arlayout`|`<a-layout>`|
 |`arheader`|`<a-layout-header>`|
 |`arfooter`|`<a-layout-footer>`|
@@ -46,7 +46,11 @@ Arco Design代码片段可帮助您提高开发效率，并确保您始终使用
 |`arcol`|`<a-col>`|
 |`ars`|`<a-space>`|
 |`ardiv`|`<a-divider>`|
-|Data Display|
+
+
+### Data Display
+|Prefix|Body|
+|---|---|
 |`arav`|`<a-avatar>`|
 |`arbad`|`<a-badge>`|
 |`arcal`|`<a-calendar>`|
@@ -72,7 +76,11 @@ Arco Design代码片段可帮助您提高开发效率，并确保您始终使用
 |`artlis`|`<a-timeline-item>`|
 |`artooltip`|`<a-tooltip>`|
 |`artree`|`<a-tree>`|
-|Data Entry|
+
+
+### Data Entry
+|Prefix|Body|
+|---|---|
 |`arac`|`<a-auto-complete>`|
 |`arcas`|`<a-cascader>`|
 |`arc`|`<a-checkbox>`|
@@ -100,7 +108,11 @@ Arco Design代码片段可帮助您提高开发效率，并确保您始终使用
 |`artp`|`<a-time-picker>`|
 |`artrans`|`<a-transfer>`|
 |`arup`|`<a-upload>`|
-|Feedback|
+
+
+### Feedback
+|Prefix|Body|
+|---|---|
 |`aral`|`<a-alert>`|
 |`ardrawer`|`<a-drawer>`|
 |`arm`|`<a-modal>`|
@@ -111,7 +123,11 @@ Arco Design代码片段可帮助您提高开发效率，并确保您始终使用
 |`arske`|`<a-skeleton>`|
 |`arskel`|`<a-skeleton-line>`|
 |`arskes`|`<a-skeleton-shape>`|
-|Navigation|
+
+
+### Navigation
+|Prefix|Body|
+|---|---|
 |`armenu`|`<a-menu>`|
 |`armenuitem`, `armenui`|`<a-menu-item>`|
 |`armenuis`, `armenuitems`|`<a-menu-item>`|
